@@ -11,9 +11,9 @@ import java.util.List;
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
         unmappedSourcePolicy = ReportingPolicy.IGNORE)
 public interface ContactMapper {
-    Contact fromRequestToModel(ContactDto contactRequest);
+    Contact fromDtoToModel(ContactDto contactRequest);
 
-    ContactDto fromModelToResponse(Contact contact);
+    ContactDto fromModelToDto(Contact contact);
 
     List<ContactDto> fromListModelToDListDto(List<Contact> contacts);
 }

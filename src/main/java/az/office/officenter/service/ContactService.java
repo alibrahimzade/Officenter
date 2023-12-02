@@ -29,8 +29,8 @@ public class ContactService {
     public ResponseEntity<ContactDto> addContact(ContactDto contactRequest) {
         log.info("Inside addContact {}", contactRequest);
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(contactMapper.fromModelToResponse
-                        (contactRepository.save(contactMapper.fromRequestToModel(contactRequest))));
+                .body(contactMapper.fromModelToDto
+                        (contactRepository.save(contactMapper.fromDtoToModel(contactRequest))));
     }
 
     public ResponseEntity<List<ContactDto>> getAllContacts(Long userId) {
