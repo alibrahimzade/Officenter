@@ -1,20 +1,21 @@
-package az.digitalhands.oficenter.mappers;
+package az.office.officenter.mapper;
 
-import az.digitalhands.oficenter.domain.Shop;
-import az.digitalhands.oficenter.request.ShopRequest;
-import az.digitalhands.oficenter.response.ShopResponse;
+import az.office.officenter.dao.entity.Shop;
+import az.office.officenter.dto.ShopDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
+
+import java.util.List;
 
 @Mapper(componentModel = "spring",
         unmappedSourcePolicy = ReportingPolicy.IGNORE,
         unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface ShopMapper {
 
-    ShopResponse fromRequestToResponse(ShopRequest shopRequest);
+    Shop fromDtoToModel(ShopDto shopDto);
 
-    Shop fromRequestToModel(ShopRequest shopRequest);
+    ShopDto fromModelToDto(Shop shop);
 
-    ShopResponse fromModelToResponse(Shop shop);
+    List<ShopDto> fromListModelToDListDto(List<Shop> shops);
 
 }
