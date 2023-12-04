@@ -17,6 +17,8 @@ import java.util.function.Function;
 
 @Service
 public class JwtService {
+
+
     private static String SECRET_KEY = "5970337336763979244226452948404D635166546A576E5A7234743777217A25";
 
     public String generateToken(User userEntity) {
@@ -82,4 +84,5 @@ public class JwtService {
     private Date extractExpiration(String token) {
         return extractClaim(token, Claims::getExpiration);
     }
+
 }

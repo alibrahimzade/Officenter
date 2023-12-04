@@ -6,6 +6,19 @@ spring:
     url: jdbc:postgresql://localhost:5432/officenter
     username: postgres
     password: postgres
+
+  mail:
+    port: 587
+    host: smtp.gmail.com
+    username: ibragimali56@gmail.com
+    password: hoho tbkd wcbi tpgw
+    properties:
+      mail:
+        smtp:
+          auth: true
+        starttls:
+          enable: true
+
   jpa:
     hibernate:
       ddl-auto: create-drop
